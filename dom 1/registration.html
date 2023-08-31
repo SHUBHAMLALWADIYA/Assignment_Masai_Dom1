@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+
+	
+</body>
+<script>
+
+    let h1tag=document.getElementById("dName");
+    let h2tag=document.getElementById("dGender");
+    let h3tag=document.getElementById("dEmail");
+    let h4tag=document.getElementById("dMobile");
+
+    function showName() {
+        
+        h1tag.innerText=document.getElementById("name").value;
+    }
+
+    function showGender() {
+        
+        
+        h2tag.innerText=document.getElementById("gender").value;
+    
+    }
+
+    function showEmail() {
+        
+        h3tag.innerText=document.getElementById("email").value;
+        
+    }
+
+    function showMobile() {
+        
+        h4tag.innerText=document.getElementById("mobile").value;
+        
+    }
+
+    function resetForm() {
+        
+        document.getElementById("name").value="";
+        document.getElementById("gender").value="";
+        document.getElementById("email").value="";
+        document.getElementById("mobile").value="";
+
+
+
+    }
+
+    function resetDisplay() {
+        
+      
+        h1tag.innerText="NAME";
+
+        h2tag.innerText="GENDER";
+
+        h3tag.innerText="EMAIL";
+
+        h4tag.innerText="MOBILE";
+    }
+</script>
+</html>
