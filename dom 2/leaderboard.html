@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leaderboard</title>
+    <style>
+      
+      #parent{
+        display: flex;
+        width: 40%;
+        height: auto;
+        border: 1px solide black;  
+        margin: auto;
+        justify-content:space-between;
+      }
+      #parent>.child{
+
+        width: auto;
+        
+        border: 3px solid black;
+        margin-top: 50px;
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-bottom: 50px;
+        padding-right: 50px;
+        font-size: 50px;
+        font-weight: bolder;
+        
+      }
+      #parent > .child:nth-child(2){
+
+        background-color: green;
+       
+      }
+      #parent > .child:nth-child(1){
+
+        background-color: red;
+
+     }
+     #font{
+      display: flex;
+      margin: auto;
+      width:40% ;
+      justify-content: space-between;
+     }
+     #font>div{
+      font-size: 30px;
+      font-weight: bolder;
+     }
+     #score{
+        margin: auto;
+        width: max-content;
+        padding: 20px 50px 20px 50px;
+        border: 2px solid black;
+        background-color: dimgray;
+        font-size: 50px;
+        margin-bottom: 50px;
+     }
+     h2{
+       text-align: center;
+       font-size: 35px;
+     }
+     #push{
+      
+      display: grid;
+      width: 30%;
+      grid-template-columns: repeat(3,1fr);
+      grid-auto-rows: 50px;
+      gap: 10px;
+      justify-content: center;
+      margin: auto;
+     }
+     #push>button{
+      font-size: 20px;
+     }
+     #enter{
+      display: block;
+      margin: auto;
+      font-size: 40px;
+      margin-top: 30px;
+      
+     }
+     
+
+    </style>
+</head>
+<body>
+
+    <div id="parent">
+        <div class="child min"  >43</div>
+        <div class="child max" >2019</div>
+    </div>
+    <div id="font">
+      <div>MIN</div>
+      <div>MAX</div>
+    </div>
+    <h2>Score</h2>
+    <div id="score"></div>
+    <div id="push">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>0</button>
+        
+        
+
+    </div>
+    <button id="enter">ENTER</button>
+    
+</body>
+<script>
+ 
+ let min=document.querySelector(".min");
+ let max=document.querySelector(".max");
+ let type=document.getElementById("score");
+ let keypad=document.querySelectorAll("#push > button");
+ let enter=document.getElementById("enter");
+ 
+ 
+ for(let i=0;i<keypad.length;i++){
+
+      keypad[i].addEventListener("click",function(){
+
+        type.innerText += keypad[i].innerText;
+        
+      })
+ }
+     
+ enter.addEventListener("click",function(){
+
+    if(Number(type.innerText) < 43){
+
+      min.innerText=type.innerText;
+      
+    }else if(Number(type.innerText)>2019){
+
+      max.innerText=type.innerText;
+      
+    }
+    type.innerText="";
+ })
+
+</script>
+</html>
